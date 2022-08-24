@@ -32,13 +32,13 @@ export default function Router() {
   return ( 
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Menu" component={Menu} options={{ title:'Batal', headerShown: false }}/>
 
         <Stack.Screen name="MyDrawer" component={MyDrawer} />
         <Stack.Screen name="LoginScreen" component={Login} />
         <Stack.Screen name="Group" component={Group} options={{ title:'Kembali', headerShown: false }}/>
         <Stack.Screen name="Summary" component={Report} options={{ title:'Kembali', headerShown: false }}/>
         <Stack.Screen name="Lokasi" component={Lokasi} options={{ title:'Kembali', headerShown: false }}/>
-        <Stack.Screen name="Menu" component={Menu} options={{ title:'Batal', headerShown: false }}/>
         <Stack.Screen name="Registrasi" component={Regis} options={{headerShown: true, title:"Kembali"}}/>
               
       </Stack.Navigator>

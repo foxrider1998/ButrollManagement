@@ -12,6 +12,9 @@ export default function InputBr({navigation, route}){
 var konst
 var panjangUpdate
 let lokasi = "DB"
+var j
+var L
+var D
  const length = (diameter, gsm) => {
    let konst =    cekMaxLength(gsm)
     let luasUtuh= (konst/(luas(125/2)-luas(11/2) ))
@@ -64,70 +67,339 @@ return sqm;
     };
     return ( <ImageBackground source={require("../assets/splash.png")} style={styles.bg} >
       <View style={styles.container}>
-        <View style={styles.posTitle}>
-          <Text style={styles.title}>Butroll Keluar</Text>
-        </View>
+      <View style={styles.contopJenis}>
+      <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>Panjang</Text>
+       </View>   
+       <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>Berat</Text>
+       </View>     
+
+      </View>
+
+      <View style={styles.contopJenis}>
+      <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>{(length(diameter,gsm)).toFixed(2)}</Text>
+       </View>   
+       <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>{(((length(diameter,gsm))*lebar*gsm )/100000).toFixed(2)}</Text>
+       </View>     
+    
+      </View>
 
           <View style={styles.contInput}>
-            <View style={styles.jenis}>
-                 <TouchableOpacity 
-                  style={styles.substance}
-                  onPress={()=>setGsm(125)}
-                >
-                  <Text >A/M</Text>
-                </TouchableOpacity>
-               
-                 <TouchableOpacity
-                  style={styles.substance}
-                    onPress={()=>setGsm(150)}
-                >
-                  <Text >H/S</Text>
-                </TouchableOpacity>
+  
+            
+                <View style={styles.container}>
+        <View style={styles.contopJenis}>
+      <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>Lebar</Text>
+       </View>   
 
-                 <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGsm(200)}
-                >
-                  <Text >F/N</Text>
-                </TouchableOpacity>
+      </View>
+        <View style={styles.contopJenis}>
 
-                 <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGsm(275)}
-                >
-                  <Text >6</Text>
-                </TouchableOpacity>
+<View style={styles.contjenis}>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=(130)}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+</View>
 
-                 <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGsm(125)}
-                >
-                  <Text >Ebc</Text>
-                </TouchableOpacity>
 
-            </View>
 
-            <View style={styles.posInput}>
-                <TextInput 
-                  style={styles.input}
-                  placeholder="Masukkan diameter"
-                  placeholderTextColor="white"
-                  onChangeText={(value)=>setDiameter(value)}
-                  value={diameter}
-                />
-            </View>
+</View>
+<View style={styles.contopJenis}>
 
-            <View style={styles.posInput}>
-                <TextInput 
-                  style={styles.input}
-                  placeholder="Masukkan lebar"
-                  placeholderTextColor="white"
-                  onChangeText={(value)=>setLebar(value)}
-                  value={lebar}
-                />
-            </View>
+<View style={styles.contjenis}>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=(175)}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+</View>
+</View>
+<View style={styles.contopJenis}>
 
-              <View style={styles.jenis}>
+<View style={styles.contjenis}>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=(220)}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+         <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{L=L+5}</Text>
+         </View>
+</View>
+
+
+
+</View>
+
+        </View>
+         
+          
+            
+         
+          
+
+
+    <View style={styles.contopJenis}>
+      <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>Diameter</Text>
+       </View>   
+
+      </View>
+  <View style={styles.contopJenis}>
+
+  <View style={styles.contjenis}>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=(16)}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+    </View>
+
+   </View>
+  <View style={styles.contopJenis}> 
+   <View style={styles.contjenis}>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=(20)}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+    </View>
+
+   </View>
+  <View style={styles.contopJenis}> 
+   <View style={styles.contjenis}>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=(30)}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+    </View>
+
+   </View>
+
+  <View style={styles.contopJenis}> 
+   <View style={styles.contjenis}>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=(40)}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+       <View style={styles.kotak1}>
+             <Text style={styles.buttonText }>{D=D+1}</Text>
+         </View>
+    </View>
+
+   </View>
+
+
+      <View style={styles.spaceatas}></View>
+      <View style={styles.contopJenis}>
+      <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>Kraft</Text>
+       </View>   
+       <View style={styles.contjenis}>
+       <Text style={styles.buttonText }>Medium</Text>
+       </View>     
+
+      </View>
+      <View style={styles.contopJenis}>
+          <View style={styles.contjenis}>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="A"}</Text>
+             </View>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="Z"}</Text>
+             </View>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="H"}</Text>
+             </View>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="E"}</Text>
+             </View>
+
+          </View>
+
+
+          <View style={styles.contjenis}>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="I"}</Text>
+             </View>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="M"}</Text>
+             </View>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="S"}</Text>
+             </View>
+             <View style={styles.kotak1}>
+                 <Text style={styles.buttonText }>{j="N"}</Text>
+             </View>
+
+          </View>
+
+        </View>
+        <View style={styles.contopJenis}>
+
+             <View style={styles.contjenis}>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j="X"}</Text>
+                </View>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j="F"}</Text>
+                </View>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j="6"}</Text>
+                </View>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j}</Text>
+                </View>
+        
+             </View>
+
+             <View style={styles.contjenis}>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j="X"}</Text>
+                </View>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j="F"}</Text>
+                </View>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j="6"}</Text>
+                </View>
+                <View style={styles.kotak1}>
+                    <Text style={styles.buttonText }>{j}</Text>
+                </View>
+        </View>
+   
+      </View>
+
+
+      <View style={styles.jenis}>
                  <TouchableOpacity
                   style={styles.substance}
                 >
@@ -179,21 +451,8 @@ return sqm;
                 >
                   <Text >CF</Text>
                 </TouchableOpacity>
-
-            </View>
-            
-             <View style={styles.posInput}>
-                <Text>{(length(diameter,gsm)).toFixed(2)}</Text> 
-            </View>
-
-            <View style={styles.posInput}>
-                <Text>{(((length(diameter,gsm))*lebar*gsm )/100000).toFixed(2)}</Text>
-            </View>
-
-          
-          
-            
-            <View style={styles.posButton}>
+             </View>   
+             <View style={styles.posButton}>
                 <TouchableOpacity
                   style={styles.button}
                   onPress={()=>submit()}
@@ -211,9 +470,10 @@ return sqm;
                 <Text style={styles.textButton}>Back</Text>
                 </TouchableOpacity>
                 </View>
-            </View>
-          </View>
-          
+            
+      
+                </View>
+      </View>
       </View>
       </ImageBackground>
     )
@@ -221,7 +481,7 @@ return sqm;
 
 const styles = StyleSheet.create({
     container:{
-      marginTop: 40
+      marginTop: 10
     },
     posTitle:{
       alignItems: 'center'
@@ -288,5 +548,40 @@ const styles = StyleSheet.create({
       margin:5,
       fontWeight: 'bold',
       color: '#0066ff'
-    }
+    },
+    kotak1:{
+      width:40,
+      height:40,
+      margin:4,
+      borderRadius:12,
+      backgroundColor: 'green',
+      justifyContent:'center'
+  
+    },
+    contjenis:{
+      flex:4,
+      width:"34%",
+      margin:5,
+      borderRadius:12,
+      justifyContent:"center",
+      flexDirection:"row"
+    },
+  
+    contopJenis:{
+      margin:0,
+      flexDirection:"row",
+      textAlign:"center",
+      justifyContent:'center'
+    },
+    buttonjenis:{
+      margin:3,
+      fontSize:20,
+      backgroundColor:"grey",
+      alignContent:"center"
+    },
+    buttonText:{
+      textAlign:"center",
+      fontSize:22,
+      justifyContent:'center'
+    },
 });
