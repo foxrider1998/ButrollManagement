@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet ,ImageBackground,Alert} from "react-native";
-import {dataRef} from './References';
+import {dataRef} from '../data/References';
 
 export default function InputBr({navigation, route}){
     const [gsm, setGsm] = useState("");
-    const [diameter, setDiameter] = useState("");
-    const [panjang, setPanjang] = useState("");
+    const [diameter, setDiameter] = useState(null);
+    const [panjang, setPanjang] = useState(null);
     const [lebar, setLebar] = useState("");
     const [grup, setGrup] = useState("");
     const [berat, setBerat] = useState("");
+    const [number, onChangeNumber] = React.useState(null);
 var konst
 var panjangUpdate
 
@@ -48,7 +49,7 @@ return sqm;
     return ( <ImageBackground source={require("../assets/splash.png")} style={styles.bg} >
       <View style={styles.container}>
         <View style={styles.posTitle}>
-          <Text style={styles.title}>Butroll Keluar</Text>
+          <Text style={styles.title}>kalkulasi</Text>
         </View>
 
         <View style={styles.boxcalkulasi}>
@@ -116,16 +117,19 @@ return sqm;
                   placeholderTextColor="white"
                   onChangeText={(value)=>setDiameter(value)}
                   value={diameter}
+                  keyboardType="numeric"
                 />
             </View>
+
 
             <View style={styles.posInput}>
                 <TextInput 
                   style={styles.input}
                   placeholder="Masukkan lebar"
                   placeholderTextColor="white"
-                  onChangeText={(value)=>setLebar(value)}
+                  onChangeText={setLebar}
                   value={lebar}
+                  keyboardType="numeric"
                 />
             </View>
 

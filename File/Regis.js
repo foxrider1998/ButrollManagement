@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet,Alert,ImageBackground } from "react-native";
-import {auth} from './References'; 
+import {auth} from '../data/References'; 
 
 export default function Regis({navigation, Route}){
     const [email, setEmail] = useState("");
