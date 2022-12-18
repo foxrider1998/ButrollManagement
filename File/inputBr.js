@@ -1,8 +1,24 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet ,ImageBackground,Alert} from "react-native";
-import {dataRef} from './References';
+import { View,Modal, Text, TextInput, Button, TouchableOpacity, StyleSheet ,ImageBackground,Alert,Pressable} from "react-native";
+import {dataRef} from '../data/References';
 
 export default function InputBr({navigation, route}){
+
+  const [modalVisible, setModalVisible] = useState(false);
+  const [buttonA, setButtonA] = useState("#ccffff");
+  const [buttonH, setButtonH] = useState("#ccffff");
+  const [buttonF, setButtonF] = useState("#ccffff");
+  const [button6, setButton6] = useState("#ccffff");
+  const [buttonE, setButtonE] = useState("#ccffff");
+
+  const [grupA, setGrupA] = useState("#ccffff");
+  const [grupB, setGrupB] = useState("#ccffff");
+  const [grupC, setGrupC] = useState("#ccffff");
+
+  const [lokasiA, setLokasiA] = useState("#ccffff");
+  const [lokasiB, setLokasiB] = useState("#ccffff");
+  const [lokasiC, setLokasiC] = useState("#ccffff");
+
     const [gsm, setGsm] = useState("");
     const [diameter, setDiameter] = useState("");
     const [panjang, setPanjang] = useState("");
@@ -22,6 +38,12 @@ let lokasi = "DB"
       return 0
     }
  }   
+
+
+// ButtonCondition(){
+
+// }
+
 
  const cekMaxLength = (gsm) => {
  if (gsm == 125){
@@ -43,6 +65,8 @@ let lokasi = "DB"
 return sqm;
 
  }
+
+ console.log(buttonA);
 
   const submit = () => {
          let newData={
@@ -70,62 +94,129 @@ return sqm;
 
           <View style={styles.contInput}>
             <View style={styles.jenis}>
+
+              
                  <TouchableOpacity 
-                  style={styles.substance}
-                  onPress={()=>setGsm(125)}
+                  style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : buttonA,justifyContent : 'center',alignItems: 'center'  }}
+                  onPress={()=>{setGsm(125)
+                    if (buttonA=="red") {
+                      setButtonA("#ccffff")
+                    } else {
+                      setButtonA("red")
+                      setButtonH('#ccffff')
+                      setButtonF('#ccffff')
+                      setButton6('#ccffff')
+                      setButtonE('#ccffff')
+                    }
+                  }
+                    
+                  }
                 >
                   <Text >A/M</Text>
                 </TouchableOpacity>
                
-                 <TouchableOpacity
-                  style={styles.substance}
-                    onPress={()=>setGsm(150)}
+
+                <TouchableOpacity 
+                  style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : buttonH,justifyContent : 'center',alignItems: 'center'  }}
+                  onPress={()=>{setGsm(150)
+                    if (buttonH=="red") {
+                      setButtonH("#ccffff")
+                    } else {
+                      setButtonH("red")
+                      setButtonA('#ccffff')
+                      setButtonF('#ccffff')
+                      setButton6('#ccffff')
+                      setButtonE('#ccffff')
+                    }
+                  }
+                    
+                  }
                 >
                   <Text >H/S</Text>
                 </TouchableOpacity>
 
-                 <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGsm(200)}
+                <TouchableOpacity 
+                  style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : buttonF,justifyContent : 'center',alignItems: 'center'  }}
+                  onPress={()=>{setGsm(200)
+                    if (buttonF=="red") {
+                      setButtonF("#ccffff")
+                    } else {
+                      setButtonF("red")
+                      setButtonH('#ccffff')
+                      setButtonA('#ccffff')
+                      setButton6('#ccffff')
+                      setButtonE('#ccffff')
+                    }
+                  }
+                    
+                  }
                 >
                   <Text >F/N</Text>
                 </TouchableOpacity>
-
-                 <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGsm(275)}
+       
+            <TouchableOpacity 
+                  style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : button6,justifyContent : 'center',alignItems: 'center'  }}
+                  onPress={()=>{setGsm(125)
+                    if (button6=="red") {
+                      setButton6("#ccffff")
+                    } else {
+                      setButton6("red")
+                      setButtonH('#ccffff')
+                      setButtonF('#ccffff')
+                      setButtonA('#ccffff')
+                      setButtonE('#ccffff')
+                    }
+                  }
+                    
+                  }
                 >
                   <Text >6</Text>
                 </TouchableOpacity>
+                </View>
+         
 
-                 <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGsm(125)}
-                >
-                  <Text >Ebc</Text>
-                </TouchableOpacity>
 
-            </View>
 
-            <View style={styles.posInput}>
-                <TextInput 
-                  style={styles.input}
-                  placeholder="Masukkan diameter"
-                  placeholderTextColor="white"
-                  onChangeText={(value)=>setDiameter(value)}
-                  value={diameter}
-                />
-            </View>
 
-            <View style={styles.posInput}>
-                <TextInput 
-                  style={styles.input}
-                  placeholder="Masukkan lebar"
-                  placeholderTextColor="white"
-                  onChangeText={(value)=>setLebar(value)}
-                  value={lebar}
-                />
-            </View>
+
+            {/* <View style={styles.centeredView}> */}
+
+{/* 
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Hello World!</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Hide Modal</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      <Pressable
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() => setModalVisible(true)}
+      >
+        <Text style={styles.textStyle}>Diameter dan Lebar</Text>
+      </Pressable>
+    </View>
+
+
+ */}
+
+
+
+
 
               <View style={styles.jenis}>
                  <TouchableOpacity
@@ -134,21 +225,46 @@ return sqm;
                   <Text> Grup </Text>
                 </TouchableOpacity>
                  <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGrup("A")}
+                 style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : grupA,justifyContent : 'center',alignItems: 'center'  }}
+                 onPress={()=>{setGrup("A")
+                   if (grupA=="red") {
+                     setGrupA("#ccffff")
+                   } else {
+                     setGrupA("red")
+                     setGrupB('#ccffff')
+                     setGrupC('#ccffff')
+                   }
+                 }}
+
                 >
                   <Text >A</Text>
                 </TouchableOpacity>
                  <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGrup("B")}
+                   style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : grupB,justifyContent : 'center',alignItems: 'center'  }}
+                   onPress={()=>{setGrup("B")
+                     if (grupB=="red") {
+                       setGrupB("#ccffff")
+                     } else {
+                       setGrupB("red")
+                       setGrupA('#ccffff')
+                       setGrupC('#ccffff')
+                     }
+                   }}
                 >
                   <Text >B</Text>
                 </TouchableOpacity>
 
                  <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>setGrup("C")}
+                   style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : grupC,justifyContent : 'center',alignItems: 'center'  }}
+                   onPress={()=>{setGrup("C")
+                     if (grupC=="red") {
+                       setGrupC("#ccffff")
+                     } else {
+                       setGrupC("red")
+                       setGrupB('#ccffff')
+                       setGrupA('#ccffff')
+                     }
+                   }}
                 >
                   <Text >C</Text>
                 </TouchableOpacity>
@@ -161,27 +277,74 @@ return sqm;
                   <Text> Lokasi </Text>
                 </TouchableOpacity>
                  <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>lokasi="DB"}
+                 style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : lokasiA,justifyContent : 'center',alignItems: 'center'  }}
+                   onPress={()=>{lokasi=("DB")
+                     if (lokasiC=="red") {
+                       setLokasiC("#ccffff")
+                     } else {
+                       setLokasiA("red")
+                       setLokasiB('#ccffff')
+                       setLokasiC('#ccffff')
+                     }
+                   }}
                 >
                   <Text >DB</Text>
                 </TouchableOpacity>
                  <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>lokasi="BF"}
+                 style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : lokasiB,justifyContent : 'center',alignItems: 'center'  }}
+                   onPress={()=>{lokasi=("BF")
+                     if (lokasiB=="red") {
+                       setLokasiB("#ccffff")
+                     } else {
+                       setLokasiB("red")
+                       setLokasiC('#ccffff')
+                       setLokasiA('#ccffff')
+                     }
+                   }}
                 >
                   <Text >BF</Text>
                 </TouchableOpacity>
 
                  <TouchableOpacity
-                  style={styles.substance}
-                  onPress={()=>lokasi="CF"}
+                 style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : lokasiC,justifyContent : 'center',alignItems: 'center'  }}
+                   onPress={()=>{lokasi=("CF")
+                     if (lokasiC=="red") {
+                       setLokasiC("#ccffff")
+                     } else {
+                       setLokasiC("red")
+                       setLokasiB('#ccffff')
+                       setLokasiA('#ccffff')
+                     }
+                   }}
                 >
                   <Text >CF</Text>
                 </TouchableOpacity>
 
+
             </View>
-            
+               <View style={styles.posInput}>
+                <TextInput 
+                  style={styles.input}
+                  placeholder="Masukkan diameter"
+                  placeholderTextColor="white"
+                  onChangeText={(value)=>setDiameter(value)}
+                  value={diameter}
+                  keyboardType="numeric"
+                />
+            </View>
+
+            <View style={styles.posInput}>
+                <TextInput 
+                  style={styles.input}
+                  placeholder="Masukkan lebar"
+                  placeholderTextColor="white"
+                  onChangeText={(value)=>setLebar(value)}
+                  value={lebar}
+                  keyboardType="numeric"
+                />
+            </View>
+
+
              <View style={styles.posInput}>
                 <Text>{(length(diameter,gsm)).toFixed(2)}</Text> 
             </View>
@@ -288,5 +451,44 @@ const styles = StyleSheet.create({
       margin:5,
       fontWeight: 'bold',
       color: '#0066ff'
+    },
+    centeredView: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      margin: 22
+    },
+    modalView: {
+      margin: 20,
+      backgroundColor: "white",
+      borderRadius: 20,
+      padding: 35,
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5
+    },
+
+    buttonOpen: {
+      backgroundColor: "#ccffff",
+    },
+    buttonClose: {
+      backgroundColor: "#2196F3",
+    },
+    textStyle: {
+      color: "black",
+      textAlign: "center",
+      margin:3
+    },
+    modalText: {
+      marginBottom: 15,
+      textAlign: "center",
+      margin:3
+
     }
 });

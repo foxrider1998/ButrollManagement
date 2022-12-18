@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { auth } from './References';
-import { dataRef } from './References';
+import { auth } from '../data/References';
+import { dataRef } from '../data/References';
 import {
   View,
   Text,

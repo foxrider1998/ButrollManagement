@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react";
 import { View, Text, TextInput, FlatList, StyleSheet, TouchableOpacity ,Alert,Image,ImageBackground,ScrollView} from "react-native";
-import {dataRef} from './References';
+import {dataRef} from '../data/References';
 
 export default function Data({navigation, route}){
   const [dskill, setDskill] = useState([]);

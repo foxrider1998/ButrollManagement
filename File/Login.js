@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet,Alert, Image, ImageBackground } from "react-native";
-import {auth} from './References';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet,Alert, Image, ImageBackground ,Dimensions} from "react-native";
+import {auth} from '../data/References';
 
 export default function Login({navigation}){
         const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ export default function Login({navigation}){
         navigation.navigate('Registrasi');
     };
     return (
-      
+      <ScrollView>
       <ImageBackground source={require("../assets/loginbg.jpg")} style={styles.bg} > 
         <View style={styles.posTitle1}>
           
@@ -73,15 +73,20 @@ export default function Login({navigation}){
             </View>
           </View>
       </ImageBackground> 
-      
+      </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
-   bg:{alignSelf:'stretch',
-    width :"100%",
-       margin: 0,
-        height:"100%"
+   bg:{
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: -1
 
     }, container:{
         width :'100%',
