@@ -2,7 +2,7 @@
   "expo": {
     "name": "BMS",
     "slug": "BMS",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -29,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "98d9fbab-b0d3-4d48-8095-7f499400b75f"
+      }
     }
   }
 }
