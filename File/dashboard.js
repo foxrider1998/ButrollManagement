@@ -120,6 +120,7 @@ export default function Dashboard({ navigation }) {
           </TouchableOpacity>
         </View>
 
+        
         <View style={styles.quickacces}>
           <TouchableOpacity
             style={styles.avatar}
@@ -127,6 +128,15 @@ export default function Dashboard({ navigation }) {
             <Text style={styles.asText}>Hitung Estimasi Panjang </Text>
           </TouchableOpacity>
         </View>
+
+        <View style={styles.quickacces}>
+          <TouchableOpacity
+            style={styles.avatar}
+            onPress={() => tambahButroll('Penggunaan')}>
+            <Text style={styles.asText}>Penggunaan Butroll </Text>
+          </TouchableOpacity>
+        </View>
+
       </View>
     </ImageBackground>
   );
@@ -136,7 +146,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
   },
-  logout: { marginLeft: '150%', marginTop: '10%' },
+  logout: { marginLeft: '120%', marginTop: '10%' },
   photo: {
     width: 80,
     height: 80,
@@ -146,6 +156,8 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: 'grey',
     flexDirection: 'row',
+    left: 0,
+    marginright:0
   },
   groupReport: {
     backgroundColor: 'grey',

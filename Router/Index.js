@@ -24,6 +24,8 @@ import kalkulasi from '../File/Calculate';
 import About from '../File/About';
 import Regis from '../File/Regis';
 
+import Penggunaan from "../File/penggunaan"
+
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -264,6 +266,10 @@ const Menu = () => {
         component={kalkulasi}
       />
 
+<Stack.Screen
+        name="Penggunaan"
+        component={Penggunaan}
+      />
 
       
 

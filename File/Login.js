@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet,Alert, Image, ImageBackground ,Dimensions} from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet,Alert, Image, ImageBackground ,Dimensions,ScrollView , SafeAreaView} from "react-native";
 import {auth} from '../data/References';
 
 export default function Login({navigation}){
@@ -26,14 +26,20 @@ export default function Login({navigation}){
         navigation.navigate('Registrasi');
     };
     return (
-      <ScrollView>
-      <ImageBackground source={require("../assets/loginbg.jpg")} style={styles.bg} > 
+      <SafeAreaView>
         <View style={styles.posTitle1}>
           
         </View>
         <View style={styles.posTitle}>
           
         </View>
+          <View style={styles.posTitle}>
+            <Text style={styles.posTitle1}>Hello there</Text>
+            <Text style={styles.posTitle}>Please login or contact admin if you didn't have account!!</Text>
+          </View>
+
+          <View style={styles.boxdecoration}>
+
 
           <View style={styles.contInput}>
             <View style={styles.posInput}>
@@ -54,7 +60,7 @@ export default function Login({navigation}){
                   value={password} 
                 />
             </View> 
-            <View style={styles.posButton}>
+             <View style={styles.posButton}>
                 <TouchableOpacity
                   style={styles.button}
                   onPress={()=>submit()}
@@ -62,31 +68,23 @@ export default function Login({navigation}){
                   <Text style={styles.textButton}>Login</Text>
                 </TouchableOpacity>
             </View>
+          
+            </View> 
+           
 
-             <View style={styles.posButton}>
-                <TouchableOpacity
-                  style={styles.button} onPress={()=>regis()} 
-
-                >
-                  <Text style={styles.textButton}>Register</Text>
-                </TouchableOpacity>
-            </View>
+             
           </View>
-      </ImageBackground> 
-      </ScrollView>
+          </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
    bg:{
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-    position: "absolute",
+    position: 'absolute',
     top: 0,
-    left: 0,
     right: 0,
     bottom: 0,
-    zIndex: -1
+    left: 0
 
     }, container:{
         width :'100%',
@@ -97,7 +95,12 @@ const styles = StyleSheet.create({
     },
     posTitle1:{
       alignItems: 'center',
-      margin : 40
+      marginTop : 30,
+      color: 'blue',
+      fontSize:24,
+
+
+      
     },
     contInput:
       {width :'70%',
@@ -128,7 +131,7 @@ const styles = StyleSheet.create({
       alignItems:"center"
     },
     posButton:{
-      margin: 20,
+      marginTop: 20,
       alignItems:'center'
     },
     button:{
@@ -137,6 +140,14 @@ const styles = StyleSheet.create({
       height: 30,
       alignItems:'center',
       backgroundColor : '#ccffff', 
+      justifyContent : 'center'
+    },
+    boxdecoration:{
+      borderRadius: 50,
+      margin:20,
+      height: 400,
+      alignItems:'center',
+      backgroundColor : '#00869f', 
       justifyContent : 'center'
     },
     textButton:{

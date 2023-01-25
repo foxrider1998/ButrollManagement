@@ -25,9 +25,9 @@ export default function InputBr({navigation, route}){
     const [lebar, setLebar] = useState("");
     const [grup, setGrup] = useState("");
     const [berat, setBerat] = useState("");
+    const [lokasi, setLokasi] = useState("#ccffff");
 var konst
 var panjangUpdate
-let lokasi = "DB"
  const length = (diameter, gsm) => {
    let konst =    cekMaxLength(gsm)
     let luasUtuh= (konst/(luas(125/2)-luas(11/2) ))
@@ -278,7 +278,7 @@ return sqm;
                 </TouchableOpacity>
                  <TouchableOpacity
                  style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : lokasiA,justifyContent : 'center',alignItems: 'center'  }}
-                   onPress={()=>{lokasi=("DB")
+                   onPress={()=>{setLokasi("DB")
                      if (lokasiC=="red") {
                        setLokasiC("#ccffff")
                      } else {
@@ -292,7 +292,7 @@ return sqm;
                 </TouchableOpacity>
                  <TouchableOpacity
                  style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : lokasiB,justifyContent : 'center',alignItems: 'center'  }}
-                   onPress={()=>{lokasi=("BF")
+                   onPress={()=>{setLokasi("BF")
                      if (lokasiB=="red") {
                        setLokasiB("#ccffff")
                      } else {
@@ -307,7 +307,7 @@ return sqm;
 
                  <TouchableOpacity
                  style={{borderRadius: 5,margin: 5,width: 40,height: 30,backgroundColor : lokasiC,justifyContent : 'center',alignItems: 'center'  }}
-                   onPress={()=>{lokasi=("CF")
+                   onPress={()=>{setLokasi("CF")
                      if (lokasiC=="red") {
                        setLokasiC("#ccffff")
                      } else {

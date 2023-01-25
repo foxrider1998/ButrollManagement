@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet ,ImageBackg
 import {dataRef} from '../data/References';
 
 export default function InputBr({navigation, route}){
-    const [gsm, setGsm] = useState("");
+    const [gsm, setGsm] = useState(125);
     const [diameter, setDiameter] = useState(null);
     const [panjang, setPanjang] = useState(null);
     const [lebar, setLebar] = useState("");
@@ -12,13 +12,18 @@ export default function InputBr({navigation, route}){
     const [number, onChangeNumber] = React.useState(null);
 var konst
 var panjangUpdate
-
  const length = (diameter, gsm) => {
    let konst =    cekMaxLength(gsm)
     let luasUtuh= (konst/(luas(125/2)-luas(11/2) ))
     let long=   (luas(diameter/2)-luas(11/2)) *luasUtuh
-    if (diameter!=0){
-    return long;
+    if (long!=NaN)
+    {
+      if (long<=0) {
+        return 0
+      } else {
+         return long;
+      }
+   
     }else {
       return 0
     }
@@ -49,7 +54,7 @@ return sqm;
     return ( <ImageBackground source={require("../assets/splash.png")} style={styles.bg} >
       <View style={styles.container}>
         <View style={styles.posTitle}>
-          <Text style={styles.title}>kalkulasi</Text>
+          <Text style={styles.title}>Hitung </Text>
         </View>
 
         <View style={styles.boxcalkulasi}>
